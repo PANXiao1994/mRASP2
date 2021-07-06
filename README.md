@@ -1,10 +1,13 @@
 # Contrastive Learning for Many-to-many Multilingual Neural Machine Transaltion(mCOLT), ACL2021
 The code for training mCOLT, a multilingual NMT training framework, implemented based on [fairseq](https://github.com/pytorch/fairseq).
 
+Arxiv: [paper](https://arxiv.org/abs/2105.09501)
 
 ## Introduction
 
 mRASP2/mCOLT, representing multilingual Contrastive Learning for Transformer, is a multilingual neural machine translation model that supports complete many-to-many multilingual machine translation. It employs both parallel corpora and multilingual corpora in a unified training framework. For detailed information please refer to the paper.  
+
+![img.png](docs/img.png)
 
 ## Pre-requisite
 ```bash
