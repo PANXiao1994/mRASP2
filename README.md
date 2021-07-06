@@ -1,4 +1,47 @@
 # Contrastive Learning for Many-to-many Multilingual Neural Machine Transaltion(mCOLT), ACL2021
-The code for training mCOLT, a multilingual NMT training framework, implemented based on fairseq.
+The code for training mCOLT, a multilingual NMT training framework, implemented based on [fairseq](https://github.com/pytorch/fairseq).
 
 
+## Introduction
+
+mRASP2/mCOLT, representing multilingual Contrastive Learning for Transformer, is a multilingual neural machine translation model that supports complete many-to-many multilingual machine translation. It employs both parallel corpora and multilingual corpora in a unified training framework. For detailed information please refer to the paper.  
+
+## Pre-requisite
+```bash
+pip install -r requirements.txt
+```
+
+## Training Data and Checkpoints
+We release our preprocessed training data and checkpoints in the following.
+### Dataset
+
+We merge 32 English-centric language pairs, resulting in 64 directed translation pairs in total. The original 32 language pairs corpus contains about 197M pairs of sentences. We get about 262M pairs of sentences after applying RAS, since we keep both the original sentences and the substituted sentences. We release both the original dataset and dataset after applying RAS.
+
+| Dataset | #Pair |
+| --- | --- |
+| [32-lang-pairs-TRAIN](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bin_parallel/download.sh) | 197603294 |
+| [32-lang-pairs-RAS-TRAIN](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bin_parallel_ras/download.sh) | 262662792 |
+| [mono-split-a](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bin_mono_split_a/download.sh) | - |
+| [mono-split-b](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bin_mono_split_b/download.sh) | - |
+| [mono-split-c](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bin_mono_split_c/download.sh) | - |
+| [mono-split-d](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bin_mono_split_d/download.sh) | - |
+| [mono-split-e](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bin_mono_split_e/download.sh) | - |
+| [mono-split-de-fr-en](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bin_mono_de_fr_en/download.sh) | - |
+| [mono-split-nl-pl-pt](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bin_mono_nl_pl_pt/download.sh) | - |
+| [32-lang-pairs-DEV-en-centric](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bin_dev_en_centric/download.sh) | - |
+| [32-lang-pairs-DEV-many-to-many](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bin_dev_m2m/download.sh) | - |
+| [Vocab](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bpe_vocab) | - |
+| [BPE Code](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bpe_vocab) | - |
+
+
+### Checkpoints
+Note that the provided checkpoint is sightly different from that in the paper.
+
+[mRASP2-12e12d](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/12e12d_last.pt)
+
+
+## Training
+```bash
+bash train_w_mono.sh ${model_config}
+```
+* We give example of `${model_config}` in `${PROJECT_REPO}/examples/configs/parallel_mono_12e12d_contrastive.yml`
