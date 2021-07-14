@@ -45,7 +45,7 @@ done
 
 
 command="CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES} fairseq-train ${data} \
-  --user-dir ${repo_dir}/mlnlc_mt \
+  --user-dir ${repo_dir}/mcolt \
   --save-dir ${model_dir} \
   --mono-data ${mono_data} \
   ${options} \
