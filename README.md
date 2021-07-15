@@ -3,6 +3,10 @@ The code for training mCOLT, a multilingual NMT training framework, implemented 
 
 Arxiv: [paper](https://arxiv.org/abs/2105.09501)
 
+**mRASP** 
+* paper: https://www.aclweb.org/anthology/2020.emnlp-main.210.pdf
+* code: https://github.com/linzehui/mRASP
+
 ## Introduction
 
 mRASP2/mCOLT, representing multilingual Contrastive Learning for Transformer, is a multilingual neural machine translation model that supports complete many-to-many multilingual machine translation. It employs both parallel corpora and multilingual corpora in a unified training framework. For detailed information please refer to the paper.  
@@ -48,3 +52,20 @@ Note that the provided checkpoint is sightly different from that in the paper.
 bash train_w_mono.sh ${model_config}
 ```
 * We give example of `${model_config}` in `${PROJECT_REPO}/examples/configs/parallel_mono_12e12d_contrastive.yml`
+
+## Contact
+Please contact me via e-mail `panxiao94@163.com` or via [wechat/zhihu](https://fork-ball-95c.notion.site/mRASP2-4e9b3450d5aa4137ae1a2c46d5f3c1fa)
+
+## Citation
+Please cite as:
+```
+@inproceedings{mrasp2,
+  title = {Contrastive Learning for Many-to-many Multilingual Neural Machine Translation},
+  author= {Xiao Pan and
+               Mingxuan Wang and
+               Liwei Wu and
+               Lei Li},
+  booktitle = {Proceedings of ACL 2021},
+  year = {2021},
+}
+```

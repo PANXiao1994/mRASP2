@@ -30,7 +30,7 @@ while [[ ! -z ${!data_var} ]]; do
 done
 
 # mono data
-mono_data_var=mono_data_1
+mono_data_var=data_mono_1
 y=1
 mono_data=""
 while [[ ! -z ${!mono_data_var} ]]; do
@@ -40,7 +40,7 @@ while [[ ! -z ${!mono_data_var} ]]; do
         mono_data=${mono_data}:${!mono_data_var}
     fi
     y=$((y+1))
-    mono_data_var=mono_data_$y
+    mono_data_var=data_mono_$y
 done
 
 
