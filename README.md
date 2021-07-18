@@ -1,5 +1,5 @@
-# Contrastive Learning for Many-to-many Multilingual Neural Machine Transaltion(mCOLT), ACL2021
-The code for training mCOLT, a multilingual NMT training framework, implemented based on [fairseq](https://github.com/pytorch/fairseq).
+# Contrastive Learning for Many-to-many Multilingual Neural Machine Translation(mCOLT/mRASP2), ACL2021
+The code for training mCOLT/mRASP2, a multilingual NMT training framework, implemented based on [fairseq](https://github.com/pytorch/fairseq).
 
 Arxiv: [paper](https://arxiv.org/abs/2105.09501)
 
@@ -53,6 +53,23 @@ bash train_w_mono.sh ${model_config}
 ```
 * We give example of `${model_config}` in `${PROJECT_REPO}/examples/configs/parallel_mono_12e12d_contrastive.yml`
 
+## Inference
+```bash
+fairseq-generate ${test_path} \
+    --user-dir ${repo_dir}/mcolt \
+    -s ${src} \
+    -t ${tgt} \
+    --skip-invalid-size-inputs-valid-test \
+    --path ${ckpts} \
+    --max-tokens ${batch_size} \
+    --task translation_w_langtok \
+    ${options} \
+    --lang-prefix-tok "LANG_TOK_"`echo "${tgt} " | tr '[a-z]' '[A-Z]'` \
+    --max-source-positions ${max_source_positions} \
+    --max-target-positions ${max_target_positions} \
+    --nbest 1 | grep -E '[S|H|P|T]-[0-9]+' > ${final_res_file}
+```
+
 ## Contact
 Please contact me via e-mail `panxiao94@163.com` or via [wechat/zhihu](https://fork-ball-95c.notion.site/mRASP2-4e9b3450d5aa4137ae1a2c46d5f3c1fa)
 
@@ -62,9 +79,9 @@ Please cite as:
 @inproceedings{mrasp2,
   title = {Contrastive Learning for Many-to-many Multilingual Neural Machine Translation},
   author= {Xiao Pan and
-               Mingxuan Wang and
-               Liwei Wu and
-               Lei Li},
+           Mingxuan Wang and
+           Liwei Wu and
+           Lei Li},
   booktitle = {Proceedings of ACL 2021},
   year = {2021},
 }
