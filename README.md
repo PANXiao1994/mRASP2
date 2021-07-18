@@ -68,6 +68,7 @@ fairseq-generate ${test_path} \
     --max-source-positions ${max_source_positions} \
     --max-target-positions ${max_target_positions} \
     --nbest 1 | grep -E '[S|H|P|T]-[0-9]+' > ${final_res_file}
+python3 ${repo_dir}/scripts/utils.py ${res_file} ${ref_file} || exit 1;
 ```
 
 ## Contact
