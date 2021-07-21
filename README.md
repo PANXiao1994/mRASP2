@@ -41,11 +41,51 @@ We merge 32 English-centric language pairs, resulting in 64 directed translation
 | [BPE Code](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bpe_vocab) | - |
 
 
-### Checkpoints
+### Checkpoints & Results
 Note that the provided checkpoint is sightly different from that in the paper.
 
-[mRASP2-12e12d](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/12e12d_last.pt)
+#### English-centric Directions
+We report **tokenized BLEU** in the following table. (check eval.sh for details)
 
+|  | 6e6d-no-mono(todo) | 12e12d-no-mono(todo) | [12e12d](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/12e12d_last.pt) | 
+| --- | --- | --- | --- |
+| en2cs/wmt16 | 21.0 | 22.3 | 23.8 |
+| cs2en/wmt16 | 29.6 | 32.4 | 33.2 |
+| en2fr/wmt14 | 42.0 | 43.3 | 43.4 |
+| fr2en/wmt14 | 37.8 | 39.3 | 39.5 |
+| en2de/wmt14 | 27.4 | 29.2 | 29.5 |
+| de2en/wmt14 | 32.2 | 34.9 | 35.2 |
+| en2zh/wmt17 | 33.0 | 34.9 | 34.1 |
+| zh2en/wmt17 | 22.4 | 24.0 | 24.4 |
+| en2ro/wmt16 | 26.6 | 28.1 | 28.7 |
+| ro2en/wmt16 | 36.8 | 39.0 | 39.1 |
+| en2tr/wmt16 | 18.6 | 20.3 | 21.2 |
+| tr2en/wmt16 | 22.2 | 25.5 | 26.1 |
+| en2ru/wmt19 | 17.4 | 18.5 | 19.2 |
+| ru2en/wmt19 | 22.0 | 23.2 | 23.6 |
+| en2fi/wmt17 | 20.2 | 22.1 | 22.9 |
+| fi2en/wmt17 | 26.1 | 29.5 | 29.7 |
+| en2es/wmt13 | 32.8 | 34.1 | 34.6 |
+| es2en/wmt13 | 32.8 | 34.6 | 34.7 |
+| en2it/wmt09 | 28.9 | 30.0 | 30.8 |
+| it2en/wmt09 | 31.4 | 32.7 | 32.8 |
+
+#### Unsupervised Directions
+
+
+#### Zero-shot Directions
+* row: source language
+* column: target language
+We report **[sacreBLEU](https://github.com/mozilla/sacreBLEU)** in the following table.
+
+| 12e12d  | ar | zh | nl | fr | de | ru |
+| --- | --- | --- | --- | --- | --- | --- |
+| ar | - | 32.5 | 3.2 | 22.8 | 11.2 | 16.7 |
+| zh | 6.5 | - | 1.9 | 32.9 | 7.6 | 23.7 |
+| nl | 1.7 | 8.2 | - | 7.5 | 10.2 | 2.9 |
+| fr | 6.2 | 42.3 | 7.5 | - | 18.9 | 24.4 |
+| de | 4.9 | 21.6 | 9.2 | 24.7 | - | 14.4 |
+| ru | 7.1 | 40.6 | 4.5 | 29.9 | 13.5 | - |
 
 ## Training
 ```bash

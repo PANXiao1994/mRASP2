@@ -1,0 +1,80 @@
+data_testset_1:
+  direction: en2de
+  name: wmt14
+  path: data/binarized/en_de/en2de/wmt14
+  ref: data/dev/en2de/wmt14
+data_testset_10:
+  direction: ru2en
+  name: newstest2019
+  path: data/binarized/en_ru/ru2en/newstest2019
+  ref: data/dev/ru2en/newstest2019
+data_testset_11:
+  direction: en2fi
+  name: newstest2017
+  path: data/binarized/en_fi/en2fi/newstest2017
+  ref: data/dev/en2fi/newstest2017
+data_testset_12:
+  direction: fi2en
+  name: newstest2017
+  path: data/binarized/en_fi/fi2en/newstest2017
+  ref: data/dev/fi2en/newstest2017
+data_testset_13:
+  direction: en2cs
+  name: newstest2016
+  path: data/binarized/en_cs/en2cs/newstest2016
+  ref: data/dev/en2cs/newstest2016
+data_testset_14:
+  direction: cs2en
+  name: newstest2016
+  path: data/binarized/en_cs/cs2en/newstest2016
+  ref: data/dev/cs2en/newstest2016
+data_testset_15:
+  direction: en2et
+  name: newstest2018
+  path: data/binarized/en_et/en2et/newstest2018
+  ref: data/dev/en2et/newstest2018
+data_testset_16:
+  direction: et2en
+  name: newstest2018
+  path: data/binarized/en_et/et2en/newstest2018
+  ref: data/dev/et2en/newstest2018
+data_testset_2:
+  direction: de2en
+  name: wmt14
+  path: data/binarized/en_de/de2en/wmt14
+  ref: data/dev/de2en/wmt14
+data_testset_3:
+  direction: en2fr
+  name: newstest2014
+  path: data/binarized/en_fr/en2fr/newstest2014
+  ref: data/dev/en2fr/newstest2014
+data_testset_4:
+  direction: fr2en
+  name: newstest2014
+  path: data/binarized/en_fr/fr2en/newstest2014
+  ref: data/dev/fr2en/newstest2014
+data_testset_5:
+  direction: en2ro
+  name: wmt16
+  path: data/binarized/en_ro/en_ro/wmt16
+  ref: data/dev/en_ro/wmt16
+data_testset_6:
+  direction: ro2en
+  name: wmt16
+  path: data/binarized/en_ro/en_ro/wmt16
+  ref: data/dev/en_ro/wmt16
+data_testset_7:
+  direction: en2zh
+  name: wmt17
+  path: data/binarized/en_zh/en2zh/wmt17
+  ref: data/dev/en2zh/wmt17
+data_testset_8:
+  direction: zh2en
+  name: wmt17
+  path: data/binarized/en_zh/zh2en/wmt17
+  ref: data/dev/zh2en/wmt17
+data_testset_9:
+  direction: en2ru
+  name: newstest2019
+  path: data/binarized/en_ru/en2ru/newstest2019
+  ref: data/dev/en2ru/newstest2019
