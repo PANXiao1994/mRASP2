@@ -42,12 +42,12 @@ We merge 32 English-centric language pairs, resulting in 64 directed translation
 
 
 ### Checkpoints & Results
-Note that the provided checkpoint is sightly different from that in the paper.
+* **Please note that the provided checkpoint is sightly different from that in the paper.** In the following sections, we report the results of the provided checkpoints.
 
 #### English-centric Directions
 We report **tokenized BLEU** in the following table. (check eval.sh for details)
 
-|  | 6e6d-no-mono(todo) | 12e12d-no-mono(todo) | [12e12d](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/12e12d_last.pt) | 
+|  | [6e6d-no-mono](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/6e6d_no_mono.pt) | [12e12d-no-mono](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/12e12d_no_mono.pt) | [12e12d](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/12e12d_last.pt) | 
 | --- | --- | --- | --- |
 | en2cs/wmt16 | 21.0 | 22.3 | 23.8 |
 | cs2en/wmt16 | 29.6 | 32.4 | 33.2 |
@@ -71,7 +71,16 @@ We report **tokenized BLEU** in the following table. (check eval.sh for details)
 | it2en/wmt09 | 31.4 | 32.7 | 32.8 |
 
 #### Unsupervised Directions
+We report **tokenized BLEU** in the following table. (check eval.sh for details)
 
+| | 12e12d |
+| --- | --- |
+| en2pl/wmt20 | 6.2 |
+| pl2en/wmt20 | 13.5 |
+| en2nl/iwslt14 | 8.8 |
+| nl2en/iwslt14 | 27.1 |
+| en2pt/opus100 | 18.9 |
+| pt2en/opus100 | 29.2 |
 
 #### Zero-shot Directions
 * row: source language
@@ -110,6 +119,18 @@ fairseq-generate ${test_path} \
     --nbest 1 | grep -E '[S|H|P|T]-[0-9]+' > ${final_res_file}
 python3 ${repo_dir}/scripts/utils.py ${res_file} ${ref_file} || exit 1;
 ```
+
+## Synonym dictionaries
+We use the bilingual synonym dictionaries provised by [MUSE](https://github.com/facebookresearch/MUSE).
+
+We generate multilingual synonym dictionaries using [this script](https://github.com/linzehui/mRASP/blob/master/preprocess/tools/ras/multi_way_word_graph.py), and apply 
+RAS using [this script](https://github.com/linzehui/mRASP/blob/master/preprocess/tools/ras/random_alignment_substitution_w_multi.sh).
+
+| Description | File | Size |
+| --- | --- | --- |
+| dep=1 | [synonym_dict_raw_dep1](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/synonym_dict_raw_dep1) | 138.0 M |
+| dep=2 | [synonym_dict_raw_dep2](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/synonym_dict_raw_dep2) | 1.6 G |
+| dep=2 | [synonym_dict_raw_dep3](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/synonym_dict_raw_dep3) | 2.2 G |
 
 ## Contact
 Please contact me via e-mail `panxiao94@163.com` or via [wechat/zhihu](https://fork-ball-95c.notion.site/mRASP2-4e9b3450d5aa4137ae1a2c46d5f3c1fa)
