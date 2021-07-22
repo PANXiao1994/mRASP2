@@ -1,0 +1,52 @@
+meta:
+  model_dir: models/pretrain/lab/multilingual/l2r/spm_100k/large-scale-parallel-contrast-lamb-ras/transformer_prenorm_12e12d_1024
+  data: data/lang150/spm/bin/parallel/spm_100k
+  mono_data: data/lang150/spm/bin/mono/spm_100k
+  mono_key: mono
+  test_data: data/lang150/spm/bin/test/spm_100k
+  lang_pairs: data/lang150/en_centric.txt
+  langs: data/lang150/all_langs.txt
+  ras_dict: data/lang150/dicts/id_dict_1.json
+ras_replace_prob: 0.9
+langtoks: {\"mono\":(\"src\",\"tgt\")}
+task: translation_multi_simple_epoch_mcolt
+arch: transformer_big_t2t_12e12d
+encoder_langtok: src
+decoder_langtok: true
+valid_subset: test
+step_size: 6
+clip_norm: 10.0
+virtual_epoch_size: 30000000
+enable_reservsed_directions_shared_datasets: true
+sampling_method: temperature
+sampling_temperature: 1.0
+share_all_embeddings: true
+encoder_learned_pos: true
+decoder_learned_pos: true
+max_source_positions: 1024
+max_target_positions: 1024
+dropout: 0.0
+activation_dropout: 0.0
+criterion: label_smoothed_cross_entropy_with_contrastive
+contrastive_lambda: 1.0
+temperature: 0.1
+lr: 0.001
+optimizer: adam
+adam_eps: 1e-06
+reset_optimizer: true
+weight_decay: 0.01
+warmup_updates: 10000
+label_smoothing: 0.1
+lr_scheduler: polynomial_decay
+min_lr: -1
+max_tokens: 1800
+update_freq: 50
+max_update: 5000000
+no_scale_embedding: true
+layernorm_embedding: true
+save_interval_updates: 1000
+skip_invalid_size_inputs_valid_test: true
+log_interval: 5
+num_workers: 1
+fp16: true
+seed: 9940827

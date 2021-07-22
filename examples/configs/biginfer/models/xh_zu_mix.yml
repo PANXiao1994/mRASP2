@@ -1,0 +1,4 @@
+model_ckpts: models/xh_zu/xh2zu/l2r/spm_100k/parallel_mono_dp0.5/transformer_big_t2t_12e12d/checkpoint_last.pt
+encoder_langtok: src
+decoder_langtok: true
+meta_langs: data/lang150/all_langs.txt

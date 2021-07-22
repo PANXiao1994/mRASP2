@@ -1,0 +1,4 @@
+model_ckpts: models/pretrain/lab/multilingual/l2r/spm_100k/wmt-parallel-mono-ras/transformer_prenorm_12e12d_1024/checkpoint_last.pt
+encoder_langtok: src
+decoder_langtok: true
+meta_langs: data/lang150/all_langs.txt
