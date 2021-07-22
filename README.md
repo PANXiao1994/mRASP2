@@ -1,11 +1,14 @@
 # Contrastive Learning for Many-to-many Multilingual Neural Machine Translation(mCOLT/mRASP2), ACL2021
 The code for training mCOLT/mRASP2, a multilingual NMT training framework, implemented based on [fairseq](https://github.com/pytorch/fairseq).
 
-Arxiv: [paper](https://arxiv.org/abs/2105.09501)
+**mRASP2**: [paper](https://arxiv.org/abs/2105.09501)
 
-**mRASP** 
-* paper: https://www.aclweb.org/anthology/2020.emnlp-main.210.pdf
-* code: https://github.com/linzehui/mRASP
+**mRASP**: [paper](https://www.aclweb.org/anthology/2020.emnlp-main.210.pdf),
+[code](https://github.com/linzehui/mRASP)
+
+---
+
+
 
 ## Introduction
 
