@@ -7,7 +7,12 @@ The code for training mCOLT/mRASP2, a multilingual NMT training framework, imple
 [code](https://github.com/linzehui/mRASP)
 
 ---
+## News
+We have released two versions, this version is the original one. In this implementation:
+- You should first merge all data, by pre-pending language token before each sentence to indicate the language.
+- AA/RAS muse be done off-line (before binarize), check [this toolkit](https://github.com/linzehui/mRASP/blob/master/preprocess).
 
+**New implementation**: https://github.com/PANXiao1994/mRASP2/tree/new_impl
 
 
 ## Introduction
@@ -106,6 +111,7 @@ bash train_w_mono.sh ${model_config}
 * We give example of `${model_config}` in `${PROJECT_REPO}/examples/configs/parallel_mono_12e12d_contrastive.yml`
 
 ## Inference
+* You must pre-pend the corresponding language token to the source side before binarize the test data.
 ```bash
 fairseq-generate ${test_path} \
     --user-dir ${repo_dir}/mcolt \
@@ -133,7 +139,7 @@ RAS using [this script](https://github.com/linzehui/mRASP/blob/master/preprocess
 | --- | --- | --- |
 | dep=1 | [synonym_dict_raw_dep1](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/synonym_dict_raw_dep1) | 138.0 M |
 | dep=2 | [synonym_dict_raw_dep2](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/synonym_dict_raw_dep2) | 1.6 G |
-| dep=2 | [synonym_dict_raw_dep3](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/synonym_dict_raw_dep3) | 2.2 G |
+| dep=3 | [synonym_dict_raw_dep3](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/synonym_dict_raw_dep3) | 2.2 G |
 
 ## Contact
 Please contact me via e-mail `panxiao94@163.com` or via [wechat/zhihu](https://fork-ball-95c.notion.site/mRASP2-4e9b3450d5aa4137ae1a2c46d5f3c1fa)
