@@ -50,6 +50,7 @@ export NUM_GPU=4 && bash train_multilingual.sh ${model_config}
 export NUM_GPU=4 && bash train_multilingual_w_mono.sh ${model_config}
 ```
 * We give example of `${model_config}` in `${PROJECT_REPO}/examples/configs/parallel-12e12d-emb1024-contrast-ras.yml`
+* The `step_size` parameter in `${model_config}` should be set to 1 if the dataset is not extremely large.
 
 ## Evaluation
 ```bash
