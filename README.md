@@ -106,7 +106,7 @@ We report **[sacreBLEU](https://github.com/mozilla/sacreBLEU)** in the following
 
 ## Training
 ```bash
-bash train_w_mono.sh ${model_config}
+export NUM_GPU=4 && bash train_w_mono.sh ${model_config}
 ```
 * We give example of `${model_config}` in `${PROJECT_REPO}/examples/configs/parallel_mono_12e12d_contrastive.yml`
 

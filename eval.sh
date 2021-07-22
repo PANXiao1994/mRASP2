@@ -11,7 +11,6 @@ test_config=$1
 source ${repo_dir}/scripts/load_config.sh ${test_config} ${repo_dir}
 model_dir=$2
 choice=$3  # all|best|last
-NUM_GPU=$4
 
 model_dir=${repo_dir}/model
 data_dir=${repo_dir}/data
