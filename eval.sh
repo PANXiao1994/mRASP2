@@ -50,7 +50,6 @@ bleu () {
     tgt=$2
     res_file=$3
     ref_file=$4
-    type=$5
     if [[ -f ${res_file} ]]; then
         f_dirname=`dirname ${res_file}`
         python3 ${repo_dir}/scripts/utils.py ${res_file} ${ref_file} || exit 1;
@@ -89,9 +88,8 @@ while read path action file; do
         src_lang="${direction%2*}"
         tgt_lang="${direction##*2}"
         res_file=$path$file
-        type="l2r"
         ref_file=${data_dir}/ref/${direction}/${testname}/dev.${tgt_lang}
-        bleuscore=`bleu ${src_lang} ${tgt_lang} ${res_file} ${ref_file} ${type} ${ARNOLD_WORKER_CPU}`
+        bleuscore=`bleu ${src_lang} ${tgt_lang} ${res_file} ${ref_file}`
         bleu_str="$(date "+%Y-%m-%d %H:%M:%S")\t${ckptname}\t${direction}/${testname}\t$bleuscore"
         echo -e ${bleu_str}  # to stdout
         echo -e ${bleu_str} >> ${model_dir}/summary.log
@@ -125,7 +123,7 @@ infer_test () {
     [[ -z ${max_source_positions} ]] && max_source_positions=1024
     [[ -z ${max_target_positions} ]] && max_target_positions=1024
     command=${gpu_cmd}"fairseq-generate ${test_path} \
-    --user-dir ${repo_dir}/mlnlc_mt \
+    --user-dir ${repo_dir}/mcolt \
     -s ${src} \
     -t ${tgt} \
     --skip-invalid-size-inputs-valid-test \
