@@ -1,0 +1,3 @@
+meta_tatoeba_path: data/tatoeba/bin
+meta_dict_path: vocab
+batch_size: 16

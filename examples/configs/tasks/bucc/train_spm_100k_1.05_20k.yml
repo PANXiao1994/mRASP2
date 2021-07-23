@@ -1,0 +1,7 @@
+meta_bucc_path: data/lang150/spm/bin/experiments/bucc/spm_100k
+splits: train
+batch_size: 16
+threshold: 1.05
+neighbor: 4
+dim: 1024
+mine_batch_size: 20000

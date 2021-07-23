@@ -35,7 +35,7 @@ eval $(parse_yaml ${main_config_yml})
 options=""
 for var in `compgen -A variable | grep -Fxvf  ~/.env-vars`
 do
-    if [[ ${var} == "meta_"* || ${var} == "options" ]]; then
+    if [[ ${var} == "model_"* || ${var} == "data_"* || ${var} == "meta_"* || ${var} == "options" ]]; then
         continue
     fi
     if [[ ${!var} == "true" ]]; then
