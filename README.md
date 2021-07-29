@@ -14,6 +14,7 @@ We have released two versions, this version is the original one. In this impleme
 
 **New implementation**: https://github.com/PANXiao1994/mRASP2/tree/new_impl
 
+* Acknowledgement: This work is supported by [Bytedance](https://bytedance.com). We thank [Chengqi](https://github.com/zhaocq-nlp) for uploading all files and checkpoints.
 
 ## Introduction
 
@@ -55,7 +56,7 @@ We merge 32 English-centric language pairs, resulting in 64 directed translation
 #### English-centric Directions
 We report **tokenized BLEU** in the following table. (check eval.sh for details)
 
-|  | [6e6d-no-mono](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/6e6d_no_mono.pt) | [12e12d-no-mono](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/12e12d_no_mono.pt) | [12e12d](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/12e12d_last.pt) | 
+|  | [6e6d-no-mono](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/6e6d_no_mono.pt) | [12e12d-no-mono](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/12e12d_no_mono.pt) | [12e12d](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/12e12d_last.pt) |
 | --- | --- | --- | --- |
 | en2cs/wmt16 | 21.0 | 22.3 | 23.8 |
 | cs2en/wmt16 | 29.6 | 32.4 | 33.2 |
@@ -132,7 +133,7 @@ python3 ${repo_dir}/scripts/utils.py ${res_file} ${ref_file} || exit 1;
 ## Synonym dictionaries
 We use the bilingual synonym dictionaries provised by [MUSE](https://github.com/facebookresearch/MUSE).
 
-We generate multilingual synonym dictionaries using [this script](https://github.com/linzehui/mRASP/blob/master/preprocess/tools/ras/multi_way_word_graph.py), and apply 
+We generate multilingual synonym dictionaries using [this script](https://github.com/linzehui/mRASP/blob/master/preprocess/tools/ras/multi_way_word_graph.py), and apply
 RAS using [this script](https://github.com/linzehui/mRASP/blob/master/preprocess/tools/ras/random_alignment_substitution_w_multi.sh).
 
 | Description | File | Size |
