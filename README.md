@@ -31,8 +31,8 @@ pip install -r requirements.txt
 | Name | Preprocessed | Binarized |
 | --- | --- | --- |
 | Parallel-pub-100 | [parallel_pub100_prep](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/parallel_pub100_prep/download.sh) |[parallel_pub100_bin](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/parallel_pub100_bin/download.sh) |
-| Mono-pub | [mono_pub_prep](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/mono_prep/download.sh) | [mono_pub_bin](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/mono_bin/download.sh) |
-| Dev-pub | [test_pub_prep](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/mono_prep/download.sh) | [test_pub_bin](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/test_bin/download.sh) |
+| Mono-pub | [mono_pub_prep](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/mono_prep/download2.sh) | [mono_pub_bin](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/mono_bin/download.sh) |
+| Dev-pub | [test_pub_prep](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/test_prep/download.sh) | [test_pub_bin](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/test_bin/download.sh) |
 
 ## Vocabulary
 * We adopt unigram in [sentencepiece](https://github.com/google/sentencepiece) to learn the subword vocabulary jointly on our in-house dataset of 150 languages. The total size of vocabulary is 100k.
@@ -68,7 +68,7 @@ export NUM_GPU=4 && export NUM_CPU=10 && bash biginfer.sh ${data_config} ${model
 ## Synonym dictionaries
 We use the bilingual synonym dictionaries provised by [MUSE](https://github.com/facebookresearch/MUSE).
 
-We generate multilingual synonym dictionaries using [this script](https://github.com/linzehui/mRASP/blob/master/preprocess/tools/ras/multi_way_word_graph.py), and apply 
+We generate multilingual synonym dictionaries using [this script](https://github.com/linzehui/mRASP/blob/master/preprocess/tools/ras/multi_way_word_graph.py), and apply
 RAS using [this script](https://github.com/linzehui/mRASP/blob/master/preprocess/tools/ras/random_alignment_substitution_w_multi.sh).
 
 | Description | File | Size |
