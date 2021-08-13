@@ -25,6 +25,10 @@ mRASP2/mCOLT, representing multilingual Contrastive Learning for Transformer, is
 ## Pre-requisite
 ```bash
 pip install -r requirements.txt
+# install fairseq
+git clone https://github.com/pytorch/fairseq
+cd fairseq
+pip install --editable ./
 ```
 
 ## Training Data and Checkpoints
@@ -47,7 +51,7 @@ We merge 32 English-centric language pairs, resulting in 64 directed translation
 | [32-lang-pairs-DEV-en-centric](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bin_dev_en_centric/download.sh) | - |
 | [32-lang-pairs-DEV-many-to-many](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bin_dev_m2m/download.sh) | - |
 | [Vocab](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bpe_vocab) | - |
-| [BPE Code](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/bpe_vocab) | - |
+| [BPE Code](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/emnlp2020/mrasp/pretrain/dataset/codes.bpe.32000) | - |
 
 
 ### Checkpoints & Results
