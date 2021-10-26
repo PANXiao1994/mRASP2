@@ -1,7 +1,7 @@
 # Contrastive Learning for Many-to-many Multilingual Neural Machine Translation(mCOLT/mRASP2), ACL2021
-The code for training mCOLT/mRASP2, a multilingual NMT training framework, implemented based on [fairseq](https://github.com/pytorch/fairseq).
+The code for training mCOLT/mRASP2, a multilingual neural machine translation training method, implemented based on [fairseq](https://github.com/pytorch/fairseq). 
 
-**mRASP2**: [paper](https://arxiv.org/abs/2105.09501)
+**mRASP2**: [paper](https://arxiv.org/abs/2105.09501) [blog](https://medium.com/@panxiao1994/mrasp2-multilingual-nmt-advances-via-contrastive-learning-ac8c4c35d63)
 
 **mRASP**: [paper](https://www.aclweb.org/anthology/2020.emnlp-main.210.pdf),
 [code](https://github.com/linzehui/mRASP)
@@ -58,9 +58,9 @@ We merge 32 English-centric language pairs, resulting in 64 directed translation
 * **Please note that the provided checkpoint is sightly different from that in the paper.** In the following sections, we report the results of the provided checkpoints.
 
 #### English-centric Directions
-We report **tokenized BLEU** in the following table. (check eval.sh for details)
+We report **tokenized BLEU** in the following table. Please click the model links to download. It is in pytorch format. (check eval.sh for details)
 
-|  | [6e6d-no-mono](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/6e6d_no_mono.pt) | [12e12d-no-mono](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/12e12d_no_mono.pt) | [12e12d](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/12e12d_last.pt) |
+|Models  | [6e6d-no-mono](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/6e6d_no_mono.pt) | [12e12d-no-mono](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/12e12d_no_mono.pt) | [12e12d](http://sf3-ttcdn-tos.pstatp.com/obj/nlp-opensource/acl2021/mrasp2/12e12d_last.pt) |
 | --- | --- | --- | --- |
 | en2cs/wmt16 | 21.0 | 22.3 | 23.8 |
 | cs2en/wmt16 | 29.6 | 32.4 | 33.2 |
